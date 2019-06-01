@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="最新技術と自然との調和を目指す">
+	<meta name="viewport" content="width=device-width">
+	<title>逆求人サイト</title>
+	<link rel="stylesheet" media="all" href="static/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="static/script.js"></script>
+</head>
+
+<body id="top">
+	<div id="wrapper">
+		{% load static%}
+		<div id="sidebar">
+			<div id="sidebarWrap">
+				<h1></h1>
+				<nav id="mainnav">
+					<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+					<div class="panel">
+						<ul>
+							<li><a href="#top">TOP</a></li>
+							<li><a href="#sec01">PROFIEL</a></li>
+							<li><a href="#sec03">HOBBY</a></li>
+							<li><a href="#sec04">CONPUTER SKILL</a></li>
+							<li><a href="#sec05">CONTACT</a></li>
+						</ul>
+						<ul id="sns">
+							<li><a href="https://www.facebook.com/profile.php?id=100034272482687" target="_blank"><img src="{% static "images/iconFb.png"%}" width="20" height="20" alt="FB"></a></li>
+							<li><a href="https://twitter.com/kDeA7cX74b2wcgP" target="_blank"><img src="{% static "images/iconTw.png"%}" width="20" height="20" alt="twitter"></a></li>
+							<li><a href="https://www.instagram.com/taku_sugar7/?hl=ja" target="_blank"><img src="{% static "images/iconInsta.png"%}" width="20" height="20" alt="Instagram"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<div id="content">
+			<p id="mainImg"><img src="{% static "images/"%}" alt=""></p>
+			<!-- PROFIEL -->
+			<section id="sec01">
+				<header>
+					<h2><span>PROFIEL</span></h2>
+				</header>
+				<div class="innerS">
+				    <h3><big>佐藤 匠 　   SATO TAKUMI</big></h3><br>
+					現在、大阪大学工学部環境エネルギー工学科第2学年在学中<br>
+					生年月日：1999年1月17日生まれ(20歳)<br>
+					出身地：滋賀県近江八幡市<br><br>
+					<div id="map">
+						<!-- GOOGLE MAP -->
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208774.52797968988!2d136.08078385000005!3d35.154076849999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017997600421d5%3A0x761e42256d84d3b7!2z5ruL6LOA55yM6L-R5rGf5YWr5bmh5biC!5e0!3m2!1sja!2sjp!4v1554433274599!5m2!1sja!2sjp" width="" height="" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<!-- // GOOGLE MAP -->
+					</div>					
+				</div>
+			</section>
+			<!-- // PROFIEL -->
+			<!-- HOBBY -->
+			<section id="sec03">
+				<header>
+					<h2><span>HOBBY</span></h2>
+				</header>
+				<div class="inner">
+					<ul class="col4">
+						<li>
+							<p class="img"><img src="{% static "images/softtennis.jpg"%}" width="1680" height="168" alt=""></p>
+							<p><big>ソフトテニス</big><br>
+							中学高校の6年間、部活動でしていました。大学でも、ソフトテニスサークルに所属しており、週1回ほど仲間とプレーしています。
+							</p>
+						</li>
+						<li>
+							<p class="img"><img src="{% static "images/trip.jpg"%}" width="1680" height="168" alt=""></p>
+							<p><big>旅行</big><br>
+							景色を見るのが好きで、よく旅行に行きます。将来は色々な国に旅したいと思っています。
+							</p>
+						</li>
+						<li>
+							<p class="img"><img src="{% static "images/airplane.jpg"%}" width="1680" height="168" alt=""></p>
+							<p><big>飛行機</big><br>
+							家の近くに空港があり、頻繁に飛行機を見ることができるので気づいたら興味を持っていました。
+							</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- // HOBBY -->
+			<!-- CONPUTER SKILL -->
+			<section id="sec04">
+				<header>
+					<h2><span>CONPUTER SKILL</span></h2>
+				</header>
+				<div class="inner">
+					<div class="article">
+						<p>
+						現在、pythonを中心に勉強しています。Djangoでの作品作りの経験があります。<br>
+						また、HTML、CSSの基本知識を持っています。
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- // CONPUTER SKILL -->
+			<!-- CONTACT -->
+			<section id="sec05">
+				<div class="inner" align="center">
+					<h2><span>CONTACT</span></h2>
+					<form name="Form" method="POST" action="{% url 'myapp:complete'%}">
+						{% csrf_token %}
+						<table>{{form1}}</table>
+						<input type="submit" value="送信する">
+					</form>
+				</div>
+			</section>
+			<!-- // CONTACT -->
+
+			<footer id="footer">
+				Copyright(c) 2016 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank">http://f-tpl.com</a><!-- ←クレジット表記を外す場合はシリアルキーが必要です http://f-tpl.com/credit/ -->
+			</footer>
+
+		</div>
+	</div>
+
+</body>
+</html>
